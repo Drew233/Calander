@@ -2,7 +2,7 @@ name: Json update
 on:
   push:
   schedule:
-    - cron: '* * 0/4 * * ?'     # 北京时间 8:00 - 23:59，每 29 分钟触发一次
+    - cron:  '*/60 * * * *'
 jobs: 
   Contest: 
     name: pull update
