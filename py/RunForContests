@@ -2,8 +2,6 @@
 
 flag=1
 files=./*.py
-while [ $flag == 1 ]
-do
 	for file in $files
 	do
 		if [ "$file" != "./Union.py" ] && [ -f $file ]
@@ -12,5 +10,3 @@ do
 		fi
 	done
 	python3 Union.py
-	sleep 7200
-done
