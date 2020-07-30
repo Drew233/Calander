@@ -2,7 +2,7 @@ name: Json update
 on:
   push:
   schedule:
-    - cron:  '0 0/4'
+    - cron:  '*/60 * * * *'
 jobs: 
   Contest: 
     name: pull update
