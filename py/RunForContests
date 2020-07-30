@@ -2,7 +2,6 @@
 
 flag=1
 files=./*.py
-while [ $flag == 1 ]
 	for file in $files
 	do
 		if [ "$file" != "./Union.py" ] && [ -f $file ]
