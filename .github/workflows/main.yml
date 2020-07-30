@@ -1,0 +1,37 @@
+name: Json update
+on: push
+jobs: 
+  Contest: 
+    name: pull update
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Set up python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Install requests
+      run: pip install requests
+
+    - name: Update paper list
+      run: |
+        pip install bs4
+        pip install lxml
+        cd py
+        bash RunForContests
+
+    - name: commit
+      run: |
+        git config --global user.email 1120437716@qq.com
+        git config --global user.name Drew233
+        git add .
+        git commit -m "update" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.TOKEN }}
